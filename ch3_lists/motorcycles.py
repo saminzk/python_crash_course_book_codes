@@ -1,6 +1,6 @@
 motorcycle = ['honda','yamaha','suzuki']
 
-motorcycle.append('ducati')
+# motorcycle.append('ducati')
 
 # print(motorcycles)
 
@@ -26,11 +26,15 @@ motorcycle.append('ducati')
 # motorcycle.remove('ducati')
 # print(motorcycle)
 
-too_expensive = 'ducati'
-print(motorcycle)
+# too_expensive = 'ducati'
+# print(motorcycle)
+#
+# motorcycle.remove(too_expensive)
+#
+# print("\nA "+too_expensive.title()+" is too expensive for me.")
+#
+# print(motorcycle)
 
-motorcycle.remove(too_expensive)
-
-print("\nA "+too_expensive.title()+" is too expensive for me.")
-
-print(motorcycle)
+# print(motorcycle[3])
+motorcycle = []
+print(motorcycle[-1])
