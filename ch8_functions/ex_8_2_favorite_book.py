@@ -6,4 +6,4 @@ def display_favorite_book(favourite_book):
 
 
 
-display_favorite_book(favourite_book);
+display_favorite_book(favourite_book)
