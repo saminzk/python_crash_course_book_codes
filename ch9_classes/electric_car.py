@@ -21,7 +21,26 @@ class Car():
             print("You can't roll back on odometers")
     
     def read_odometer(self):
-        print("This car  has "+str(self.odometer_reading)+" miles on it.")
+        print("This car has "+str(self.odometer_reading)+" miles on it.")
+    
+    def fill_gas_tank(self):
+        print("Filling the gas tank of your car.")
+
+class Battery():
+    def __init__(self, battery_size = 85):
+        self.battery_size = battery_size
+
+    def describe_battery(self):
+        print(f"The capacity of battery is {self.battery_size} -kWh battery.")
+    
+    def get_range(self):
+        if self.battery_size == 70:
+            range = 240
+        elif self.battery_size == 85:
+            range = 270
+        
+        message = "This car can go approximately "+str(range)+" miles on full charge."
+        print(message)
 
 
 
@@ -30,11 +49,8 @@ class ElectricCar(Car):
         #in python 2.7 super is used like below
         # super(ElectricCar, self).__init__(make, model, year)
         super().__init__(make, model,year)
-        self.batter_size = 70
+        self.battery = Battery()
 
-    def describe_battery(self):
-        """"Print a statement describing the battery size."""
-        print("This car has a "+str(self.batter_size)+ "-kWh battery.")
     
     def fill_gas_tank(self):
         """Electric cars dont have gas tank"""
@@ -43,5 +59,9 @@ class ElectricCar(Car):
 
 my_tesla = ElectricCar('Tesla','Model S',2016)
 print(my_tesla.get_descriptive_name())
-my_tesla.describe_battery()
-my_tesla.fill_gas_tank()
+# my_tesla.fill_gas_tank()
+my_tesla.update_odometer(200)
+my_tesla.read_odometer()
+# my_tesla.fill_gas_tank()
+my_tesla.battery.describe_battery()
+my_tesla.battery.get_range()
