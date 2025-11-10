@@ -1,0 +1,4 @@
+from admin import Admin
+
+admin_1 = Admin('Samin','Khan','21-NOV-1998', 'Adelaide','South Australia','Australia',['can add post','can delete post','can ban user'])
+admin_1.privileges.show_privileges()

@@ -1,3 +1,4 @@
+""""A class that can be used to represent a car"""
 class Car():
     def __init__(self, make, model, year):
         self.make = make
@@ -22,9 +23,26 @@ class Car():
     def read_odometer(self):
         print("This car  has "+str(self.odometer_reading)+" miles on it.")
     
-my_new_car = Car('Toyota','Corolla A2','2008')
-print(my_new_car.get_descriptive_name())
-my_new_car.update_odometer(20)
-my_new_car.read_odometer()
-my_new_car.update_odometer(10)
-my_new_car.read_odometer()
+    def increment_odometer(self,miles):
+        self.odometer_reading += miles
+
+class Battery:
+    def __init__(self,battery_size = 70):
+        self.battery_size = battery_size
+    
+    def describe_battery(self):
+        print(f"This car has a {self.battery_size}  -kWh battery.")
+    
+    def get_range(self):
+        if self.battery_size == 70:
+            range = 240
+        elif self.battery_size == 85:
+            range = 270
+    
+        message = "This car can go approximately "+str(range)+" miles on full charge."
+        print(message)
+
+class ElectricCar(Car):
+    def __init__(self, make, model, year):
+        super().__init__(make, model, year)
+        self.battery = Battery()
